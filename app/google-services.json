@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657041646090",
+    "project_id": "visionapp-9bd42",
+    "storage_bucket": "visionapp-9bd42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657041646090:android:7a32d24edb4bc07100b5f3",
+        "android_client_info": {
+          "package_name": "com.xml.visionapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzZKkm_OMs-0Fgm_KeJp-Mge-hhyxUGLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

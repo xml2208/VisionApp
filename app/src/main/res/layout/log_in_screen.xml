@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bcg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:paddingStart="80dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Registration"
+        android:textColor="@color/login_screen_text"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/login_screen_text"
+        android:hint="First name"
+        android:textColor="@color/login_screen_edit_text"
+        android:textColorHint="@color/login_screen_edit_text"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:backgroundTint="@color/login_screen_text"
+        android:hint="Last name"
+        android:textColor="@color/login_screen_edit_text2"
+        android:textColorHint="@color/login_screen_edit_text2"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/login_screen_text"
+        android:hint="Password"
+        android:textColor="@color/login_screen_edit_text3"
+        android:textStyle="bold"
+        android:textColorHint="@color/login_screen_edit_text3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/login_screen_text"
+            android:buttonTint="@color/login_screen_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agree with Terms and Conditions"
+            android:textColor="@color/login_screen_text"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/login_screen_text"
+        android:textColor="@color/white"
+        android:text="Login" />
+
+</LinearLayout>

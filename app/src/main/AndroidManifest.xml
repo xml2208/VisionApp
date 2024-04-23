@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="BIND_NOTIFICATION_LISTENER_SERVICE" />
+
+    <application
+        android:name=".data.VisionApp"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher_mine"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_mine_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VisionApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".presentation.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.VisionApp">
+        </activity>
+        <activity
+            android:name=".presentation.login.LogInScreenActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.VisionApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".presentation.DoctorScreen"
+            android:theme="@style/Theme.VisionApp" />
+
+        <service
+            android:name=".data.services.NotificationListener"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".data.services.MapAccessibilityService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+    </application>
+
+    <queries>
+        <package android:name="trendyol.com" />
+    </queries>
+</manifest>
