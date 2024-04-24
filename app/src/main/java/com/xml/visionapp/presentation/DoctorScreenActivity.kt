@@ -95,11 +95,12 @@ class DoctorScreen : ComponentActivity() {
         if (dueDate.before(currentDate)) dueDate.add(Calendar.HOUR_OF_DAY, 24)
 
         val timeDiff = dueDate.timeInMillis - currentDate.timeInMillis
-        val minutes = TimeUnit.MILLISECONDS.toMinutes(timeDiff)
+        val initialDelay = TimeUnit.MILLISECONDS.toMinutes(timeDiff)
 
+        //This is happened in every 15 Minutes for DEMO check (for you). We will change it to 15days to remind the user's checkup.
         val periodicWorkerRequest =
-            PeriodicWorkRequest.Builder(NotificationWorker::class.java, 24, TimeUnit.HOURS)
-                .setInitialDelay(minutes, TimeUnit.MINUTES)
+            PeriodicWorkRequest.Builder(NotificationWorker::class.java, 15, TimeUnit.MINUTES)
+                .setInitialDelay(5, TimeUnit.SECONDS)
                 .addTag("NotificationWorker")
                 .setInputData(
                     workDataOf(
@@ -108,7 +109,6 @@ class DoctorScreen : ComponentActivity() {
                 )
                 .build()
 
-//        WorkManager.getInstance(context).enqueue(periodicWorkerRequest)
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(
             "notificationWorker",
             ExistingPeriodicWorkPolicy.UPDATE,

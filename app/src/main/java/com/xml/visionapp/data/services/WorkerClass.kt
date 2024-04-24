@@ -21,6 +21,8 @@ class NotificationWorker(private val context: Context, workerParams: WorkerParam
 
     override fun doWork(): Result {
 
+        Log.d("xml22", "NotificationWorker: doWork")
+
         showNotification(
             context = context,
             content = inputData.getString(PHONE_NUM_NOTIFICATION).toString()
@@ -64,12 +66,6 @@ class BatteryReaderWorker(context: Context, workerParams: WorkerParameters) :
         val speech = Speech.getInstance()
 
         speech.say("Device battery is $battery%")
-
-        if (battery == "100") speech.say("Battery is full")
-        if (battery == "80") speech.say("Device battery is 80 percent")
-        if (battery == "50") speech.say("Device battery is 50 percent")
-        if (battery == "20") speech.say("Device battery is about to die. 20 percent")
-        if (battery == "5") speech.say("Please charge your device. 5 percent")
 
         return Result.success()
     }

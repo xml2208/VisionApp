@@ -14,6 +14,14 @@ private val retrofit: Retrofit = Retrofit.Builder()
 
 interface VisionApiService {
 
+    /* This is our response
+    * {
+    "status": "ok",
+    "nowOnline": "true",
+    "battery": 80,
+    "time": "12:08/27/03/2024"
+    * }
+    */
     @GET("charge")
     suspend fun getBatteryPercentage(): BatteryResponse
 

@@ -18,13 +18,18 @@ class VisionAppViewModel : ViewModel() {
     private val _state = MutableStateFlow<VisionState>(VisionState.BatteryLoadingState)
     val state = _state.asStateFlow()
 
-
     init {
         viewModelScope.launch { getBattery() }
     }
 
     private suspend fun getBattery() {
+
         try {
+            /*
+            * Server for getting battery percentage our Vision Device may not work properly in your device(location) so
+            * you can check it with hardcode "75%"(
+            *
+            */
 //            val get = VisionApi.visionApiService.getBatteryPercentage()
 //            _state.value = VisionState.BatterySuccessState(get.battery)
             _state.value = VisionState.BatterySuccessState("75")

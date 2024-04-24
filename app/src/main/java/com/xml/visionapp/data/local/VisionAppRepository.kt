@@ -31,6 +31,7 @@ class VisionAppRepository(
             }
             return false
         } catch (e: Exception) {
+            e.printStackTrace()
             Toast.makeText(context, "Network error!!!", Toast.LENGTH_SHORT).show()
             return false
         }
